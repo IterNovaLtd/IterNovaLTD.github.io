@@ -67,7 +67,7 @@
 /* ─── Hero Section ─────────────────────────────────────────── */
 .site-hero {
   position: relative;
-  /* pink→mustard gradient over your image */
+
   background:
     linear-gradient(
       rgba(239,71,111,0.6),   /* coral */
@@ -81,21 +81,18 @@
   color: var(--bg);
 }
 
-/* keep content above the overlay */
 .site-hero .container {
   position: relative;
   z-index: 1;
 }
 
-/* resize logo */
 .site-hero .container img {
-  width: 220px;      /* desktop size */
-  max-width: 50%;    /* but never more than half screen */
+  width: 300px;
+  max-width: 60%;
   height: auto;
   margin-bottom: 1rem;
 }
 
-/* headline & subtext */
 .site-hero h1 {
   font-size: 2.5rem;
   margin: .5em 0;
@@ -105,7 +102,6 @@
   margin-bottom: 1.5em;
 }
 
-/* button style */
 .site-hero .btn {
   padding: .75em 1.5em;
   margin-top: 0;
