@@ -58,11 +58,38 @@
   </section>
 
   <!-- Main Content -->
-  <main class="container">
-    <h2>Who We Are</h2>
-    <p>Welcome to iterNova—your partner in business innovation, process automation and AI chatbots.</p>
-    <!-- Add your “About” copy, team bios, mission statement, etc. -->
-  </main>
+<main class="container">
+  <h2>Get in Touch</h2>
+  <p>Have a chatbot, automation or innovation question? Drop us a line below.</p>
+
+  <!-- contact form -->
+  <form
+    id="contact-form"
+    class="contact-form"
+    action="https://formspree.io/f/xblyqbqp"
+    method="POST"
+    novalidate
+  >
+    <!-- spam honeypot -->
+    <input type="text" name="_gotcha" style="display:none">
+
+    <!-- Email subject -->
+    <input type="hidden" name="_subject" value="New message via Ite rNova site">
+
+    <label for="name">Your Name<span class="required">*</span></label>
+    <input type="text" id="name" name="name" required>
+
+    <label for="email">Your Email<span class="required">*</span></label>
+    <input type="email" id="email" name="_replyto" required>
+
+    <label for="message">Message<span class="required">*</span></label>
+    <textarea id="message" name="message" rows="6" required></textarea>
+
+    <button type="submit">Send Message</button>
+
+    <div class="form-status" aria-live="polite"></div>
+  </form>
+</main>
 
   <!-- Footer -->
   
@@ -112,5 +139,35 @@
   </div>
 
 </footer>
+  <script>
+  const form = document.getElementById('contact-form');
+  const status = document.querySelector('.form-status');
+
+  form.addEventListener('submit', async e => {
+    e.preventDefault();
+    status.textContent = 'Sending…';
+    status.className = 'form-status';
+
+    const data = new FormData(form);
+    try {
+      const res = await fetch(form.action, {
+        method: form.method,
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      });
+      if (res.ok) {
+        status.textContent = 'Thank you! Your message has been sent.';
+        status.classList.add('success');
+        form.reset();
+      } else {
+        const err = await res.json();
+        throw new Error(err.error || 'Oops! There was a problem.');
+      }
+    } catch (err) {
+      status.textContent = err.message;
+      status.classList.add('error');
+    }
+  });
+</script>
 </body>
 </html>
