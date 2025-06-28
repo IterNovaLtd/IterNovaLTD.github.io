@@ -351,3 +351,25 @@ html {
 .form-status.error {
   color: red;
 }
+
+/* ─── reCAPTCHA wrapper ─────────────────────────────────── */
+.contact-form .g-recaptcha {
+  /* center the widget */
+  display: block;
+  margin: 1rem auto;
+
+  /* scale it down if it feels too big */
+  transform: scale(0.85);
+  transform-origin: 0 0;
+
+  /* ensure the wrapper still reserves the right space */
+  width: 304px;   /* matches "normal" width; reduce to 160px for "compact" */
+  height: 78px;   /* matches "normal" height; change to 144px for "compact" */
+}
+
+/* optional: give it a gentle border or background to set it off */
+.contact-form .g-recaptcha-wrapper {
+  padding: .5rem;
+  background: rgba(243,243,243, .5);
+  border-radius: 4px;
+}
