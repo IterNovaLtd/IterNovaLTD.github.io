@@ -362,3 +362,14 @@ html {
   transform: scale(0.85);
   transform-origin: top left;
 }
+
+/* ─── Recaptcha + Submit Side-by-Side ───────────────────── */
+.captcha-and-submit {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;            /* space between the widget and the button */
+  margin-top: 0.5rem;   /* optional: pull them up closer to the previous field */
+}
+.contact-form button {
+  margin: 0;            /* ensure no extra top-margin */
+}
