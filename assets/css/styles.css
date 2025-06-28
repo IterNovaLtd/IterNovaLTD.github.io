@@ -1,4 +1,3 @@
- <style>
     :root {
       --bg:       #F4F4F4;    /* Soft Ivory */
       --text:     #343A40;    /* Charcoal */
@@ -209,4 +208,3 @@
       .services .container,
       .about .container { flex-direction: column; }
     }
-  </style>
