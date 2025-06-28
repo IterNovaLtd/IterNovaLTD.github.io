@@ -121,14 +121,60 @@
     }
 
     /* ─── Footer ──────────────────────────────────────────────── */
-    .site-footer {
-      background: var(--primary);
-      padding: 2rem 0;
-      text-align: center;
-      font-size: .9rem;
-    }
-    .site-footer a { margin: 0 .5rem; color: var(--secondary); }
-    .site-footer a:hover { color: var(--mustard); }
+/* Footer widgets */
+.footer-widgets {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding: 2rem 0;
+  text-align: left;
+}
+.footer-col { flex: 1 1 200px; }
+.footer-col h4 {
+  margin-bottom: .75rem;
+  font-size: 1.1rem;
+}
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.footer-links li {
+  margin-bottom: .5rem;
+  font-size: .95rem;
+}
+.footer-links a {
+  color: var(--text);
+  transition: color 150ms;
+}
+.footer-links a:hover {
+  color: var(--coral);
+}
+
+/* Footer bottom bar */
+.footer-bottom {
+  border-top: 1px solid var(--secondary);
+  padding: 1rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: .9rem;
+}
+.back-to-top {
+  text-decoration: none;
+  color: var(--text);
+  font-size: .9rem;
+}
+.back-to-top:hover {
+  color: var(--coral);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .footer-widgets { flex-direction: column; }
+  .footer-bottom { flex-direction: column; gap: .5rem; }
+}
+
 
     /* ─── Responsive tweaks ───────────────────────────────────── */
     @media (max-width: 600px) {
@@ -194,13 +240,53 @@
   </section>
 
   <!-- Footer -->
-  <footer class="site-footer">
-    <div class="container">
-      <a href="#">Privacy Policy</a>|
-      <a href="#">Terms of Service</a><br/>
-      © 2025 IterNova Ltd.
+<footer class="site-footer">
+
+  <div class="footer-widgets container">
+
+    <!-- Contact info -->
+    <div class="footer-col">
+      <h4>Contact Us</h4>
+      <p>
+        IterNova Ltd<br/>
+        40 Kensington Place<br/>
+        Brighton, BN1 4AG<br/>
+        <a href="tel:+441234567890">+44 78666 62609</a><br/>
+        <a href="mailto:hello@iternova.co.uk">hello@iternova.co.uk</a>
+      </p>
     </div>
-  </footer>
+
+    <!-- Legal & company details -->
+    <div class="footer-col">
+      <h4>Legal</h4>
+      <ul class="footer-links">
+        <li><a href="/privacy-policy.html">Privacy Policy</a></li>
+        <li><a href="/terms-of-service.html">Terms of Service</a></li>
+        <li>Company Reg. No: 16546141</li>
+      </ul>
+    </div>
+
+    <!-- Quick Links -->
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul class="footer-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- Bottom bar -->
+  <div class="footer-bottom container">
+    <a href="#top" class="back-to-top">↑ Back to top</a>
+    <p>© 2025 IterNova Ltd. All rights reserved.</p>
+  </div>
+
+</footer>
+
 
 </body>
 </html>
