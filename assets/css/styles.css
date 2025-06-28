@@ -52,7 +52,7 @@
       rgba(239,71,111,0.6),   /* coral */
       rgba(255,209,102,0.6)    /* mustard */
     ),
-    url('assets/images/hero.png') center/cover no-repeat;
+    url('../images/hero.png') center/cover no-repeat;
   min-height: 65vh;
   display: flex;
   align-items: center;
