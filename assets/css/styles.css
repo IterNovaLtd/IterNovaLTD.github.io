@@ -293,3 +293,58 @@ html {
 .breadcrumb a:hover {
   color: var(--coral);
 }
+
+/* ─── Contact Form ───────────────────────────────────────── */
+.contact-form {
+  max-width: 600px;
+  margin: 2rem auto;
+  display: grid;
+  gap: 1rem;
+}
+.contact-form label {
+  font-weight: 600;
+}
+.contact-form .required {
+  color: var(--coral);
+}
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: .75rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-family: inherit;
+  font-size: 1rem;
+}
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: var(--coral);
+  box-shadow: 0 0 0 2px rgba(239,71,111, .2);
+}
+.contact-form button {
+  align-self: start;
+  padding: .75rem 1.5rem;
+  background: var(--coral);
+  color: var(--bg);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background .2s;
+}
+.contact-form button:hover {
+  background: #d84a6a;
+}
+
+/* status messages */
+.form-status {
+  grid-column: 1 / -1;
+  font-size: .95rem;
+}
+.form-status.success {
+  color: green;
+}
+.form-status.error {
+  color: red;
+}
