@@ -65,22 +65,54 @@
     }
 
     /* ─── Hero ─────────────────────────────────────────────────── */
-    .site-hero {
-      position: relative;
-      background: url('images/hero.png') center/cover no-repeat;
-      min-height: 80vh;
-      display: flex; align-items: center; text-align: center;
-      color: var(--bg);
-    }
-    .site-hero::before {
-      content: '';
-      position: absolute; inset: 0;
-      background: var(--coral);
-      opacity: .6;
-    }
-    .site-hero .container {
-      position: relative; z-index: 1;
-    }
+  /* blend coral → mustard over your photo */
+  background:
+    linear-gradient(
+      rgba(239,71,111,0.6),  /* coral @ 60% */
+      rgba(255,209,102,0.6)  /* mustard @ 60% */
+    ),
+    url('images/hero.jpg') center/cover no-repeat;
+  min-height: 65vh;         /* shrink slightly so content feels centered */
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+/* 2. Bigger logo that scales responsively */
+.site-hero .container img {
+  width: 220px;    /* grow your logo */
+  max-width: 50%;  /* but never exceed half the viewport width */
+  height: auto;
+  margin-bottom: 1rem;
+}
+
+/* 3. Scaled-up heading + spacing */
+.site-hero h1 {
+  font-size: 2.5rem;    /* bigger headline */
+  margin: 0.5em 0;
+}
+.site-hero p {
+  font-size: 1.125rem;  /* slightly larger subtext */
+  margin-bottom: 1.5em;
+}
+
+/* 4. Button reposition—push it closer to text */
+.site-hero .btn {
+  margin-top: 0;        /* remove extra gap */
+  padding: 0.75em 1.5em;
+}
+
+/* 5. Mobile tweaks: keep text legible on phones */
+@media (max-width: 600px) {
+  .site-hero {
+    min-height: 50vh;
+    padding: 2rem 0;
+  }
+  .site-hero h1 { font-size: 2rem; }
+  .site-hero p  { font-size: 1rem; }
+  .site-hero .container img { width: 160px; max-width: 60%; }
+}
+
 
     /* ─── Services ─────────────────────────────────────────────── */
     .services { padding: 4rem 0; background: var(--bg); }
