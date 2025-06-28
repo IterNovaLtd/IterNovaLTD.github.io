@@ -25,6 +25,7 @@
 
   <!-- Main stylesheet -->
   <link rel="stylesheet" href="assets/css/styles.css" />
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 <body>
   
@@ -84,7 +85,10 @@
 
     <label for="message">Message<span class="required">*</span></label>
     <textarea id="message" name="message" rows="6" required></textarea>
-
+    
+<!-- Google reCAPTCHA widget -->
+<div class="g-recaptcha" data-sitekey="6LciRXErAAAAABe_lL60lGUppCK8_qSEhY7lfU9p"></div>
+    
     <button type="submit">Send Message</button>
 
     <div class="form-status" aria-live="polite"></div>
