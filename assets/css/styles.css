@@ -324,6 +324,9 @@ html {
 }
 .contact-form button {
   align-self: start;
+    width: auto;              /* let it size to its content */
+  max-width: 200px;         /* cap so it never grows too wide */
+  justify-self: start;      /* aligns it to the left cellar of the grid */
   padding: .75rem 1.5rem;
   background: var(--coral);
   color: var(--bg);
