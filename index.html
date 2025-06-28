@@ -1,50 +1,192 @@
-<style>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>IterNova</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?
+    family=Montserrat:wght@500;700&
+    family=Open+Sans:wght@400;600&display=swap"
+    rel="stylesheet"/>
+
+  <style>
     :root {
-      --iv-bg: #F4F4F4;
-      --iv-text: #343A40;
-      --iv-secondary: #7D7D7D;
-      --iv-primary: #C0C0C0;
-      --iv-coral:  #EF476F;
-      --iv-mustard:#FFD166;
+      --bg:       #F4F4F4;    /* Soft Ivory */
+      --text:     #343A40;    /* Charcoal */
+      --secondary:#7D7D7D;    /* Mid-grey */
+      --primary:  #C0C0C0;    /* Silvered Light Grey */
+      --coral:    #EF476F;    /* Vibrant Coral */
+      --mustard:  #FFD166;    /* Mustard Yellow */
     }
+    *, *::before, *::after { box-sizing: border-box; }
     body {
-      margin:0; padding:0;
-      background:var(--iv-bg);
-      color:var(--iv-text);
-      font-family:'Open Sans',sans-serif;
-      line-height:1.5;
+      margin: 0; padding: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Open Sans', sans-serif;
+      line-height: 1.6;
     }
-    h1,h2,h3 {
-      font-family:'Montserrat',sans-serif;
-      color:var(--iv-text);
-      margin:1em 0 0.5em;
+    h1, h2, h3 { font-family: 'Montserrat', sans-serif; margin: .5em 0; }
+    a { color: var(--coral); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* ─── Utility layout ───────────────────────────────────────── */
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 1rem;
     }
-    a { color:var(--iv-coral); text-decoration:none; }
-    a:hover { text-decoration:underline; }
-    .btn-primary {
-      background:var(--iv-coral);
-      color:var(--iv-bg);
-      padding:0.6em 1.2em;
-      border:none;
-      border-radius:4px;
-      font-family:'Montserrat',sans-serif;
-      font-weight:600;
-      cursor:pointer;
+    .btn {
+      display: inline-block;
+      background: var(--coral);
+      color: var(--bg);
+      padding: .6em 1.2em;
+      border: none;
+      border-radius: 4px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: background 200ms, transform 100ms;
     }
-    .btn-primary:hover {
-      background:var(--iv-mustard);
-      color:var(--iv-text);
+    .btn:hover {
+      background: var(--mustard);
+      color: var(--text);
+      transform: translateY(-2px);
     }
-    header { padding:2em; text-align:center; }
+
+    /* ─── Hero ─────────────────────────────────────────────────── */
+    .site-hero {
+      position: relative;
+      background: url('images/hero.png') center/cover no-repeat;
+      min-height: 80vh;
+      display: flex; align-items: center; text-align: center;
+      color: var(--bg);
+    }
+    .site-hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: var(--coral);
+      opacity: .6;
+    }
+    .site-hero .container {
+      position: relative; z-index: 1;
+    }
+
+    /* ─── Services ─────────────────────────────────────────────── */
+    .services { padding: 4rem 0; background: var(--bg); }
+    .services .container {
+      display: flex; flex-wrap: wrap; gap: 2rem;
+    }
+    .service-item {
+      flex: 1 1 250px;
+      background: #fff;
+      padding: 1.5rem;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      border-radius: 8px;
+    }
+    .service-item img { max-width: 80px; margin-bottom: 1rem; }
+
+    /* ─── About ───────────────────────────────────────────────── */
+    .about {
+      padding: 4rem 0;
+      background: var(--primary);
+      color: var(--text);
+    }
+    .about .container { display: flex; flex-wrap: wrap; gap: 2rem; }
+    .about .about-text { flex: 1 1 400px; }
+    .about .about-image { flex: 1 1 300px; }
+    .about .about-image img { width: 100%; border-radius: 8px; }
+
+    /* ─── Call to Action ──────────────────────────────────────── */
+    .cta {
+      padding: 4rem 0; background: var(--bg); text-align: center;
+    }
+
+    /* ─── Footer ──────────────────────────────────────────────── */
+    .site-footer {
+      background: var(--primary);
+      padding: 2rem 0;
+      text-align: center;
+      font-size: .9rem;
+    }
+    .site-footer a { margin: 0 .5rem; color: var(--secondary); }
+    .site-footer a:hover { color: var(--mustard); }
+
+    /* ─── Responsive tweaks ───────────────────────────────────── */
+    @media (max-width: 600px) {
+      .site-hero { min-height: 60vh; }
+      .services .container,
+      .about .container { flex-direction: column; }
+    }
   </style>
 </head>
 <body>
-  <header>
-    <img src="images/iterNova Logo Coral.png" alt="IterNova logo" width="200"/>
 
-    <h1>Welcome to iterNova</h1>
-    <p>Your new innovation consultancy.</p>
-    <button class="btn-primary">Get in Touch</button>
+  <!-- Hero -->
+  <header class="site-hero">
+    <div class="container">
+      <img src="Images/IterNova Logo Coral Light.png" alt="IterNova logo" width="180"/>
+      <h1>Welcome to IterNova</h1>
+      <p>Your innovation consultancy.</p>
+      <button class="btn">Get in Touch</button>
+    </div>
   </header>
+
+  <!-- Services -->
+  <section class="services">
+    <div class="container">
+      <!-- Repeat .service-item for each service -->
+      <div class="service-item">
+        <img src="images/lightbulb-solid.svg" alt="Ideation icon"/>
+        <h3>Ideation</h3>
+        <p>Brainstorm and validate your next big thing.</p>
+      </div>
+      <div class="service-item">
+        <img src="images/cube-solid.svg" alt="Prototyping icon"/>
+        <h3>Prototyping</h3>
+        <p>Rapid prototypes to test ideas in the real world.</p>
+      </div>
+      <div class="service-item">
+        <img src="images/robot-solid.svg" alt="Automation icon"/>
+        <h3>Automation</h3>
+        <p>Streamline processes with smart, scalable systems.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section class="about">
+    <div class="container">
+      <div class="about-text">
+        <h2>Why iterNova?</h2>
+        <p>We blend structured workflows with creative spark to help your business innovate faster—and smarter.</p>
+      </div>
+      <div class="about-image">
+        <img src="Images/team-photo.png" alt="Our team at work"/>
+      </div>
+    </div>
+  </section>
+
+  <!-- Call to Action -->
+  <section class="cta">
+    <div class="container">
+      <h2>Ready to innovate?</h2>
+      <button class="btn">Contact Us Today</button>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <a href="#">Privacy Policy</a>|
+      <a href="#">Terms of Service</a><br/>
+      © 2025 IterNova Ltd.
+    </div>
+  </footer>
+
 </body>
 </html>
