@@ -257,32 +257,33 @@ html {
 
 /* ─── Inner‐page header ───────────────────────────────────────── */
 .page-header {
-  background: var(--secondary); /* your dark mid-grey */
-  color: var(--bg);             /* ivory text */
-  padding: 1.5rem 0;
+  background: var(--secondary);  /* dark mid‐grey band */
+  color: var(--bg);              /* ivory text */
+  padding: 1rem 0;               /* vertical breathing room */
+  margin-bottom: 2rem;           /* separate from main content */
 }
 .page-header .container {
   display: flex;
   flex-direction: column;
-  gap: .5rem;
+  gap: .25rem;                   /* tighten up the gap */
 }
 .page-header h1 {
   margin: 0;
-  font-size: 2rem;
+  font-size: 1.75rem;            /* a touch smaller */
   font-weight: 600;
 }
 .breadcrumb {
   list-style: none;
   display: flex;
   gap: .25rem;
-  font-size: .875rem;
   margin: 0;
   padding: 0;
+  font-size: .875rem;            /* smaller crumb text */
 }
 .breadcrumb li + li::before {
   content: "/";
-  color: var(--text);
   margin: 0 .25rem;
+  color: var(--text);
 }
 .breadcrumb a {
   color: var(--bg);
@@ -291,9 +292,4 @@ html {
 }
 .breadcrumb a:hover {
   color: var(--coral);
-}
-
-/* optional: give it some separation from main content */
-main {
-  margin-top: 2rem;
 }
