@@ -261,6 +261,7 @@ html {
   color: var(--bg);              /* ivory text */
   padding: 1rem 0;               /* vertical breathing room */
   margin-bottom: 2rem;           /* separate from main content */
+  border-bottom: 2px solid var(--coral)
 }
 .page-header .container {
   display: flex;
@@ -271,6 +272,7 @@ html {
   margin: 0;
   font-size: 1.75rem;            /* a touch smaller */
   font-weight: 600;
+  color: var(--coral);
 }
 .breadcrumb {
   list-style: none;
@@ -291,7 +293,7 @@ html {
   transition: color 150ms;
 }
 .breadcrumb a:hover {
-  color: var(--coral);
+  color: var(--mustard);
 }
 
 /* ─── Contact Form ───────────────────────────────────────── */
