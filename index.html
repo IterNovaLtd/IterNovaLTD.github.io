@@ -64,53 +64,65 @@
       transform: translateY(-2px);
     }
 
-    /* ─── Hero ─────────────────────────────────────────────────── */
-  /* blend coral → mustard over your photo */
+/* ─── Hero Section ─────────────────────────────────────────── */
+.site-hero {
+  position: relative;
+  /* pink→mustard gradient over your image */
   background:
     linear-gradient(
-      rgba(239,71,111,0.6),  /* coral @ 60% */
-      rgba(255,209,102,0.6)  /* mustard @ 60% */
+      rgba(239,71,111,0.6),   /* coral */
+      rgba(255,209,102,0.6)    /* mustard */
     ),
-    url('images/hero.jpg') center/cover no-repeat;
-  min-height: 65vh;         /* shrink slightly so content feels centered */
+    url('images/hero.png') center/cover no-repeat;
+  min-height: 65vh;
   display: flex;
   align-items: center;
   text-align: center;
+  color: var(--bg);
 }
 
-/* 2. Bigger logo that scales responsively */
+/* keep content above the overlay */
+.site-hero .container {
+  position: relative;
+  z-index: 1;
+}
+
+/* resize logo */
 .site-hero .container img {
-  width: 220px;    /* grow your logo */
-  max-width: 50%;  /* but never exceed half the viewport width */
+  width: 220px;      /* desktop size */
+  max-width: 50%;    /* but never more than half screen */
   height: auto;
   margin-bottom: 1rem;
 }
 
-/* 3. Scaled-up heading + spacing */
+/* headline & subtext */
 .site-hero h1 {
-  font-size: 2.5rem;    /* bigger headline */
-  margin: 0.5em 0;
+  font-size: 2.5rem;
+  margin: .5em 0;
 }
 .site-hero p {
-  font-size: 1.125rem;  /* slightly larger subtext */
+  font-size: 1.125rem;
   margin-bottom: 1.5em;
 }
 
-/* 4. Button reposition—push it closer to text */
+/* button style */
 .site-hero .btn {
-  margin-top: 0;        /* remove extra gap */
-  padding: 0.75em 1.5em;
+  padding: .75em 1.5em;
+  margin-top: 0;
 }
 
-/* 5. Mobile tweaks: keep text legible on phones */
+/* mobile tweaks */
 @media (max-width: 600px) {
   .site-hero {
     min-height: 50vh;
     padding: 2rem 0;
   }
+  .site-hero .container img {
+    width: 160px;
+    max-width: 60%;
+  }
   .site-hero h1 { font-size: 2rem; }
   .site-hero p  { font-size: 1rem; }
-  .site-hero .container img { width: 160px; max-width: 60%; }
 }
 
 
