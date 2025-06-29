@@ -5,6 +5,7 @@
       --primary:  #C0C0C0;    /* Silvered Light Grey */
       --coral:    #EF476F;    /* Vibrant Coral */
       --mustard:  #FFD166;    /* Mustard Yellow */
+      --panel-bg: #343A40;    /* Charcoal again */
     }
     *, *::before, *::after { box-sizing: border-box; }
     body {
