@@ -618,7 +618,7 @@ html {
     display: flex;
     flex-direction: column;       /* stack content & image */
     align-items: stretch;         /* full-width blocks */
-    gap: 1.5rem;                  /* smaller gap */
+    gap: 0.5rem;                  /* smaller gap */
   }
 
   .service-content {
@@ -628,6 +628,11 @@ html {
   .service-image img {
     width: 100%;
     height: auto;
+  }
+.service-content .btn-small {
+    margin-bottom: 0.25rem;
+  }
+
   }
 
   /* FOOTER */
