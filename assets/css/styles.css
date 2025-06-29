@@ -560,3 +560,26 @@ html {
 .service-section:nth-of-type(even) .service-image {
   color: var(--text);
 }
+
+/* ─── 15% Charcoal Tint on Service Images ─────────────────── */
+.service-image {
+  position: relative;        /* establish stacking context */
+  overflow: hidden;          /* clip the overlay to the rounded corners */
+}
+
+.service-image img {
+  display: block;
+  width: 100%;
+  border-radius: 8px;        /* match your existing radius */
+}
+
+/* the tint layer */
+.service-image::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(52, 58, 64, 0.15);  /* charcoal #343A40 @15% */
+  pointer-events: none;       /* lets clicks through */
+  border-radius: 8px;         /* match the img’s corners */
+}
