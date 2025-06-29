@@ -674,3 +674,29 @@ html {
     transform: translateY(-50%);
   }
 }
+/* ─── SUPER-TIGHT MOBILE GAPS FOR SERVICE SECTIONS ───────────────── */
+@media (max-width: 768px) {
+  /* stack content & image with almost no gap */
+  .service-section .container {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 0.25rem !important;  /* <-- collapse the flex-gap */
+  }
+
+  /* kill paragraph bottom-margin if it’s still big */
+  .service-content p {
+    margin-bottom: 0.25rem !important;
+  }
+
+  /* zero out any button bottom-margin too */
+  .service-content .btn-small {
+    margin-bottom: 0 !important;
+  }
+
+  /* ensure the image itself isn’t pushing down */
+  .service-image {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
+}
