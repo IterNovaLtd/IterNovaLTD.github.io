@@ -675,3 +675,28 @@ html {
     padding: 0 !important;
   }
 }
+/* ─── Tweak: Add side-padding & tiny gaps on mobile ───────────────── */
+@media (max-width: 768px) {
+  /* 1) Add horizontal padding so text & images don’t hug the screen */
+  .service-section > .container {
+    display: block !important;
+    padding: 0 1rem !important;       /* 1rem each side */
+  }
+
+  /* 2) Space out headings & paragraphs */
+  .service-section .service-content h2,
+  .service-section .service-content p {
+    margin: 0 0 0.5rem !important;     /* 0.5rem under each text block */
+  }
+
+  /* 3) Gap between paragraph & button */
+  .service-section .service-content .btn-small {
+    margin: 0 0 0.75rem !important;    /* 0.75rem under the button */
+  }
+
+  /* 4) Optional: ensure image sits flush under the button gap you set */
+  .service-section .service-image {
+    margin: 0 !important;
+  }
+}
+
