@@ -708,7 +708,7 @@ html {
   }
   /* tiny margin between the two inner panels */
   .about > .container > * + * {
-    margin-top: 0.75rem !important;
+    margin-top: 1rem !important;
   }
   /* ensure any headings/paras inside also aren’t over-margined */
   .about .about-text h2,
