@@ -546,3 +546,17 @@ html {
     max-width: 100%;
   }
 }
+/* ─── Auto-alternate background for service sections ───────────────── */
+.service-section {
+  background: var(--bg);        /* default: ivory/white */
+}
+
+.service-section:nth-of-type(even) {
+  background: var(--primary);   /* every 2nd block: light-grey */
+}
+
+/* ensure text is always readable on grey */
+.service-section:nth-of-type(even) .service-content,
+.service-section:nth-of-type(even) .service-image {
+  color: var(--text);
+}
