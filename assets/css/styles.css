@@ -646,3 +646,18 @@ html {
     padding: 0.5rem 0;            /* reduce vertical padding */
   }
 }
+
+@media (max-width: 768px) {
+  /* inset the entire nav content from the screen edges */
+  .site-nav .nav-container {
+    padding: 0 1.5rem;
+  }
+
+  /* nudge logo & toggle in a touch more */
+  .site-nav .logo-link {
+    padding-left: 0.5rem;
+  }
+  .site-nav .nav-toggle {
+    padding-right: 0.5rem;
+  }
+}
