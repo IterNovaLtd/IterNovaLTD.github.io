@@ -649,25 +649,29 @@ html {
     transform: translateY(-50%) !important;
   }
 }
-/* ─── True Mobile Stacking Fallback ────────────────────────── */
+/* ─── MOBILE SERVICE-SECTION FALLBACK (Safari & older browsers) ───────────────── */
 @media (max-width: 768px) {
-  /* 1) Turn OFF flex-gap entirely, just in case */
-  .service-section .container {
-    gap: 0 !important;
+  /* 1) Force block-stacking instead of flex so gap isn’t used */
+  .service-section > .container {
+    display: block !important;
+    padding: 0 !important;    /* if you had extra padding, kill it */
   }
 
-  /* 2) Stack items via flex (or block), then inject a small margin */
-  .service-section .container {
-    display: flex !important;
-    flex-direction: column !important;
-  }
-  .service-section .container > * + * {
-    margin-top: 0.5rem !important;  /* tweak to taste */
-  }
-
-  /* 3) Kill any internal bottom-margins on paragraphs/buttons */
-  .service-section .service-content p,
-  .service-section .service-content .btn-small {
+  /* 2) Collapse all bottom-margins inside the text block */
+  .service-section .service-content > * {
+    margin-top: 0 !important;
     margin-bottom: 0 !important;
+  }
+
+  /* 3) Introduce just a hair of space between text+button and image */
+  .service-section .service-content + .service-image {
+    margin-top: 0.5rem !important;  /* tweak this to 0.25rem or 0.75rem if you like */
+  }
+
+  /* 4) Ensure the image itself has no extra top/bottom padding or margin */
+  .service-section .service-image,
+  .service-section .service-image img {
+    margin: 0 !important;
+    padding: 0 !important;
   }
 }
