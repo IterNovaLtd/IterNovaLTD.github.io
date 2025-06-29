@@ -191,5 +191,25 @@
       });
     });
   </script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const options = {
+    threshold: 0.1  // fire when 10% of the element is visible
+  };
+  const callback = (entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);  // animate only once
+      }
+    });
+  };
+  const observer = new IntersectionObserver(callback, options);
+
+  // watch both service-content and service-image blocks
+  document.querySelectorAll('.service-content, .service-image')
+    .forEach(el => observer.observe(el));
+});
+</script>
 </body>
 </html>
