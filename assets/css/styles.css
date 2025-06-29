@@ -388,61 +388,59 @@ html {
   margin: 0;
 }
 
-/* ─── Hamburger & Responsive Nav ─────────────────────────── */
+/* ─── Responsive Sticky Nav & Burger Menu ───────────────── */
 
-/* Hide toggle on desktop */
-.nav-toggle {
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: .5rem;
+/* 1) Flex container & side-padding for logo and toggle */
+.site-nav .nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1rem;
+}
+
+/* 2) Hide the burger toggle on desktop */
+.site-nav .nav-toggle {
   display: none;
 }
 
-/* Hamburger lines */
-.hamburger,
-.hamburger::before,
-.hamburger::after {
-  display: block;
-  width: 24px;
-  height: 3px;
-  background: var(--text);
-  border-radius: 2px;
-  position: relative;
-  transition: transform .3s ease;
-}
-.hamburger::before,
-.hamburger::after {
-  content: "";
-  position: absolute;
-  left: 0;
-}
-.hamburger::before {
-  top: -8px;
-}
-.hamburger::after {
-  top: 8px;
-}
-
-/* MOBILE STYLES */
+/* 3) Mobile styles: show toggle, style panel, animate burger → X */
 @media (max-width: 768px) {
-  /* show the toggle button on mobile */
-  .nav-toggle {
-    display: inline-flex;       /* was “block”, inline-flex centers the span nicely */
+  /* Show and position the toggle button */
+  .site-nav .nav-toggle {
+    display: inline-flex;
     align-items: center;
     justify-content: center;
-    z-index: 1001;              /* on top of everything */
+    margin-left: auto;
     background: none;
     border: none;
+    padding: 0.5rem;
     cursor: pointer;
-    padding: .5rem;
+    z-index: 1001;
   }
 
-  /* hide nav-list offscreen */
-  .nav-list {
+  /* Hamburger icon lines */
+  .hamburger,
+  .hamburger::before,
+  .hamburger::after {
+    width: 24px;
+    height: 3px;
+    background: var(--text);
+    border-radius: 2px;
+    position: relative;
+    transition: transform 0.3s ease;
+  }
+  .hamburger::before,
+  .hamburger::after {
+    content: "";
+    position: absolute;
+    left: 0;
+  }
+  .hamburger::before { top: -8px; }
+  .hamburger::after  { top: 8px; }
+
+  /* Off-canvas menu panel */
+  .site-nav .nav-list {
     list-style: none;
-    margin: 0;
-    padding: 2rem 1rem;
     position: fixed;
     top: 0;
     left: -100%;
@@ -450,32 +448,33 @@ html {
     max-width: 300px;
     height: 100vh;
     background: var(--panel-bg);
+    padding: 2rem 1rem;
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
-    transition: left .3s ease;
+    transition: left 0.3s ease;
     z-index: 1000;
   }
 
-  /* when open, slide into view */
-  .nav-list.open {
+  /* Slide panel in when open */
+  .site-nav .nav-list.open {
     left: 0;
   }
 
-  /* style links in the panel */
-  .nav-list li a {
+  /* Ivory links for contrast */
+  .site-nav .nav-list li a {
     color: var(--bg);
     font-size: 1.1rem;
   }
 
-  /* animate hamburger → X when menu open */
-  .nav-toggle[aria-expanded="true"] .hamburger {
+  /* Animate burger → X on open */
+  .site-nav .nav-toggle[aria-expanded="true"] .hamburger {
     background: transparent;
   }
-  .nav-toggle[aria-expanded="true"] .hamburger::before {
+  .site-nav .nav-toggle[aria-expanded="true"] .hamburger::before {
     transform: translateY(8px) rotate(45deg);
   }
-  .nav-toggle[aria-expanded="true"] .hamburger::after {
+  .site-nav .nav-toggle[aria-expanded="true"] .hamburger::after {
     transform: translateY(-8px) rotate(-45deg);
   }
 }
