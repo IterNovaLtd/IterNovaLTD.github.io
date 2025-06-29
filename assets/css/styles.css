@@ -388,14 +388,14 @@ html {
   margin: 0;
 }
 
-/* ─── Responsive Sticky Nav & Burger Menu ───────────────── */
+/* ─── Hamburger & Responsive Nav ─────────────────────────── */
 
 /* 1) Flex container & side-padding for logo and toggle */
 .site-nav .nav-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 1rem;
+  padding: 0 1.5rem;  /* more room left + right */
 }
 
 /* 2) Hide the burger toggle on desktop */
@@ -403,22 +403,55 @@ html {
   display: none;
 }
 
-/* 3) Mobile styles: show toggle, style panel, animate burger → X */
+/* 3) Mobile styles (≤768px) */
 @media (max-width: 768px) {
-  /* Show and position the toggle button */
+  /* a) Show and position the toggle button */
   .site-nav .nav-toggle {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    margin-left: auto;
+    margin-right: 1rem;   /* pull it in from the right edge */
     background: none;
     border: none;
     padding: 0.5rem;
     cursor: pointer;
+    z-index: 1002;
+  }
+
+  /* b) Give the header a stacking context so panel sits under it */
+  .site-nav {
+    position: relative;
+  }
+
+  /* c) Off-canvas menu panel sits just *below* the header */
+  .site-nav .nav-list {
+    list-style: none;
+    position: absolute;
+    top: 100%;            /* directly under header */
+    left: -100%;          /* hidden off-screen */
+    width: 75%;
+    max-width: 300px;
+    background: var(--panel-bg);
+    padding: 2rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    transition: left 0.3s ease;
     z-index: 1001;
   }
 
-  /* Hamburger icon lines */
+  /* d) Slide panel in when open */
+  .site-nav .nav-list.open {
+    left: 0;
+  }
+
+  /* e) Force ivory links for contrast */
+  .site-nav .nav-list li a {
+    color: var(--bg);
+    font-size: 1.1rem;
+  }
+
+  /* f) Hamburger lines */
   .hamburger,
   .hamburger::before,
   .hamburger::after {
@@ -438,36 +471,7 @@ html {
   .hamburger::before { top: -8px; }
   .hamburger::after  { top: 8px; }
 
-  /* Off-canvas menu panel */
-  .site-nav .nav-list {
-    list-style: none;
-    position: fixed;
-    top: 0;
-    left: -100%;
-    width: 75%;
-    max-width: 300px;
-    height: 100vh;
-    background: var(--panel-bg);
-    padding: 2rem 1rem;
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-    transition: left 0.3s ease;
-    z-index: 1000;
-  }
-
-  /* Slide panel in when open */
-  .site-nav .nav-list.open {
-    left: 0;
-  }
-
-  /* Ivory links for contrast */
-  .site-nav .nav-list li a {
-    color: var(--bg);
-    font-size: 1.1rem;
-  }
-
-  /* Animate burger → X on open */
+  /* g) Animate burger → X on open */
   .site-nav .nav-toggle[aria-expanded="true"] .hamburger {
     background: transparent;
   }
