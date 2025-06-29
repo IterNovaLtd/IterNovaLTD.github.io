@@ -483,18 +483,3 @@ html {
     transform: translateY(-8px) rotate(-45deg);
   }
 }
-
-/* ─── Services page fixes ─────────────────────────────────── */
-
-/* 1) Make the default .container inside .services stack its children */
-.services > .container {
-  display: block;
-}
-
-/* 2) New grid wrapper for your cards */
-.services-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-  margin: 2rem 0;   /* space above & below the cards */
-}
