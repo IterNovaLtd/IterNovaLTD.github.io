@@ -686,7 +686,7 @@ html {
   /* 2) Space out headings & paragraphs */
   .service-section .service-content h2,
   .service-section .service-content p {
-    margin: 0 0 0.5rem !important;     /* 0.5rem under each text block */
+    margin: 0 0 0.75rem !important;     /* 0.5rem under each text block */
   }
 
   /* 3) Gap between paragraph & button */
