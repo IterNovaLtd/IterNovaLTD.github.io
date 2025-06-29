@@ -655,9 +655,9 @@ html {
 
   /* nudge logo & toggle in a touch more */
   .site-nav .logo-link {
-    padding-left: 0.5rem;
+    padding-left: 1rem;
   }
   .site-nav .nav-toggle {
-    padding-right: 0.5rem;
+    padding-right: 0.1rem;
   }
 }
