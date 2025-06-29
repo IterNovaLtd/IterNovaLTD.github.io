@@ -653,16 +653,24 @@ html {
 }
 
 @media (max-width: 768px) {
-  /* inset the entire nav content from the screen edges */
+  /* 1) Make the nav-container flex-start and relative */
   .site-nav .nav-container {
-    padding: 0 1.5rem;
+    display: flex;
+    justify-content: flex-start; /* stops auto-spacing logo & toggle */
+    position: relative;          /* sets up absolute children */
+    padding: 0;                  /* we’ll handle padding on the elements themselves */
   }
 
-  /* nudge logo & toggle in a touch more */
+  /* 2) Nudge the logo in from the left */
   .site-nav .logo-link {
-    padding-left: 1rem;
+    margin-left: 1rem;   /* tweak until it feels right */
   }
+
+  /* 3) Pin the toggle to the right edge */
   .site-nav .nav-toggle {
-    padding-right: 0.1rem;
+    position: absolute;  /* escape the flex flow */
+    right: 1rem;         /* tweak until it sits perfectly */
+    top: 50%;
+    transform: translateY(-50%);
   }
 }
