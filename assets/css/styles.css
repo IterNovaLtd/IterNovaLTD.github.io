@@ -483,11 +483,3 @@ html {
     transform: translateY(-8px) rotate(-45deg);
   }
 }
-
-/* ─── Services page: only the .services-grid is flex ───────────────── */
-.services-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-  margin: 2rem 0;  /* add vertical breathing room around the cards */
-}
