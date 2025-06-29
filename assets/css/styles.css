@@ -24,24 +24,39 @@
       margin: 0 auto;
       padding: 0 1rem;
     }
-    .btn {
-      display: inline-block;
-      background: var(--coral);
-      color: var(--bg);
-      padding: .6em 1.2em;
-      border: none;
-      border-radius: 4px;
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 600;
-      text-transform: uppercase;
-      cursor: pointer;
-      transition: background 200ms, transform 100ms;
-    }
-    .btn:hover {
-      background: var(--mustard);
-      color: var(--text);
-      transform: translateY(-2px);
-    }
+/* ─── Button & Hover Effects ─────────────────────────────── */
+.btn {
+  display: inline-block;              /* hugs content */
+  padding: 0.75rem 1.5rem;            /* roomy click area */
+  font-weight: 600;
+  color: var(--bg);                   /* ivory text */
+  background-color: var(--coral);     /* coral base */
+  border: 2px solid transparent;      /* keeps size from shifting */
+  border-radius: 4px;
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    background-color 0.3s ease,
+    color            0.3s ease,
+    transform        0.2s ease,
+    box-shadow       0.2s ease;
+}
+
+/* only apply hover/pointer effects on devices that actually hover */
+@media (hover: hover) and (pointer: fine) {
+  .btn:hover {
+    background-color: var(--mustard);
+    color: var(--text);
+    transform: scale(1.05);           /* subtle grow */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+}
+
+/* focus styles for accessibility */
+.btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(255, 200, 0, 0.6);  /* mustard-toned ring */
+}
 
 /* ─── Hero Section ─────────────────────────────────────────── */
 .site-hero {
