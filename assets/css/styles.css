@@ -406,7 +406,7 @@ html {
   display: block;
   width: 24px;
   height: 3px;
-  background: var(--bg);
+  background: var(--text);
   border-radius: 2px;
   position: relative;
   transition: transform .3s ease;
@@ -426,10 +426,16 @@ html {
 
 /* MOBILE STYLES */
 @media (max-width: 768px) {
-  /* show the toggle */
+  /* show the toggle button on mobile */
   .nav-toggle {
-    display: block;
-    z-index: 1001; /* above the nav-panel */
+    display: inline-flex;       /* was “block”, inline-flex centers the span nicely */
+    align-items: center;
+    justify-content: center;
+    z-index: 1001;              /* on top of everything */
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: .5rem;
   }
 
   /* hide nav-list offscreen */
