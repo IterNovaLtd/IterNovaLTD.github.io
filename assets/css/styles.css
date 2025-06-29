@@ -560,3 +560,49 @@ html {
 .service-section:nth-of-type(even) .service-image {
   color: var(--text);
 }
+
+/* ─── Fade-Up + Scale Animations ─────────────────────────── */
+
+/* Start state: hidden and shifted down & smaller */
+.service-content,
+.service-image {
+  opacity: 0;
+  transform: translateY(20px) scale(0.97);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* When JS adds .visible, we animate to this */
+.service-content.visible,
+.service-image.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* ─── .btn-small Hover States ────────────────────────────── */
+/* Default .btn-small: coral background, ivory text */
+.btn-small {
+  background: var(--coral);
+  color: var(--bg);
+  border: 2px solid transparent;
+  transition: background 0.2s, color 0.2s, border-color 0.2s, transform 0.2s;
+}
+
+/* Hover on white sections (even service-sections) → coral fill stays,
+   add slight grow */
+.service-section:nth-of-type(even) .btn-small:hover {
+  transform: scale(1.05);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* Hover on grey sections (odd service-sections) → mustard outline, transparent bg */
+.service-section:nth-of-type(odd) .btn-small {
+  background: transparent;
+  color: var(--text);
+  border-color: var(--mustard);
+}
+.service-section:nth-of-type(odd) .btn-small:hover {
+  background: transparent;
+  color: var(--mustard);
+  transform: scale(1.05);
+  box-shadow: 0 0 0 2px var(--mustard);
+}
