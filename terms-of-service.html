@@ -34,9 +34,15 @@
     <a href="index.html" class="logo-link">
       <img src="assets/images/logo-coral.png" alt="IterNova logo">
     </a>
+
+    <!-- Hamburger toggle -->
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+      <span class="hamburger"></span>
+    </button>
+
     <nav>
       <ul class="nav-list">
-        <li><a href="services.html>Services</a></li>
+        <li><a href="services.html">Services</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
@@ -112,5 +118,16 @@
   </div>
 
 </footer>
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const toggle = document.querySelector('.nav-toggle');
+    const menu   = document.querySelector('.nav-list');
+
+    toggle.addEventListener('click', () => {
+      const isOpen = menu.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', isOpen);
+    });
+  });
+</script>
 </body>
 </html>
