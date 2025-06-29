@@ -606,51 +606,6 @@ html {
   transform: scale(1.05);
   box-shadow: 0 0 0 2px var(--mustard);
 }
-/* ─── Mobile fixes for service sections & footer ───────────────────── */
-@media (max-width: 768px) {
-
-  /* SERVICE SECTIONS */
-  .service-section {
-    padding: 2rem 0;               /* less vertical breathing room */
-  }
-
-  .service-section .container {
-    display: flex;
-    flex-direction: column;       /* stack content & image */
-    align-items: stretch;         /* full-width blocks */
-    gap: 0.5rem;                  /* smaller gap */
-  }
-
-  .service-content {
-    text-align: left;             /* or center, if you prefer */
-  }
-
-  .service-image img {
-    width: 100%;
-    height: auto;
-  }
-.service-content .btn-small {
-    margin-bottom: 0.25rem;
-  }
-
-  }
-
-  /* FOOTER */
-  .site-footer {
-    padding: 1.5rem 0 0.5rem;      /* reduce top/bottom padding */
-  }
-
-  .footer-widgets {
-    gap: 1rem;                    /* tighter space between columns */
-    margin-bottom: 1rem;          /* less margin under widgets */
-  }
-
-  .footer-bottom {
-    flex-direction: column;       /* stack the back-to-top & copyright */
-    gap: 0.25rem;                 /* tighter gap */
-    padding: 0.5rem 0;            /* reduce vertical padding */
-  }
-}
 
 @media (max-width: 768px) {
   /* 1) Make the nav-container flex-start and relative */
@@ -674,55 +629,6 @@ html {
     transform: translateY(-50%);
   }
 }
-/* ─── SUPER-TIGHT MOBILE GAPS FOR SERVICE SECTIONS ───────────────── */
-@media (max-width: 768px) {
-  /* stack content & image with almost no gap */
-  .service-section .container {
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: stretch !important;
-    gap: 0.25rem !important;  /* <-- collapse the flex-gap */
-  }
-
-  /* kill paragraph bottom-margin if it’s still big */
-  .service-content p {
-    margin-bottom: 0.25rem !important;
-  }
-
-  /* zero out any button bottom-margin too */
-  .service-content .btn-small {
-    margin-bottom: 0 !important;
-  }
-
-  /* ensure the image itself isn’t pushing down */
-  .service-image {
-    margin-top: 0 !important;
-    padding-top: 0 !important;
-  }
-}
-/* ─── MOBILE SERVICE-SECTION TIGHTENING ───────────────────────── */
-@media (max-width: 768px) {
-  .service-section {
-    padding: 1rem 0 !important;
-  }
-  .service-section .container {
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 0.25rem !important;
-    align-items: flex-start !important;
-  }
-  .service-content p {
-    margin: 0 0 0.25rem !important;
-  }
-  .service-content .btn-small {
-    margin: 0 0 0.25rem !important;
-  }
-  .service-image {
-    margin: 0 !important;
-    padding: 0 !important;
-  }
-}
-
 /* ─── MOBILE NAV: FREE LOGO + PINNED BURGER ───────────────────── */
 @media (max-width: 768px) {
   /* 1) turn off the “space-between” and give full control to the container */
@@ -741,5 +647,27 @@ html {
     right: 0.75rem !important;
     top: 50% !important;
     transform: translateY(-50%) !important;
+  }
+}
+/* ─── True Mobile Stacking Fallback ────────────────────────── */
+@media (max-width: 768px) {
+  /* 1) Turn OFF flex-gap entirely, just in case */
+  .service-section .container {
+    gap: 0 !important;
+  }
+
+  /* 2) Stack items via flex (or block), then inject a small margin */
+  .service-section .container {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+  .service-section .container > * + * {
+    margin-top: 0.5rem !important;  /* tweak to taste */
+  }
+
+  /* 3) Kill any internal bottom-margins on paragraphs/buttons */
+  .service-section .service-content p,
+  .service-section .service-content .btn-small {
+    margin-bottom: 0 !important;
   }
 }
