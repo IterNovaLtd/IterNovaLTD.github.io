@@ -1,7 +1,7 @@
     :root {
       --bg:       #F4F4F4;    /* Soft Ivory */
       --text:     #343A40;    /* Charcoal */
-      --secondary:#666666;    /* Mid-grey */
+      --secondary:#666666;    /* Dark-grey */
       --primary:  #C0C0C0;    /* Silvered Light Grey */
       --coral:    #EF476F;    /* Vibrant Coral */
       --mustard:  #FFD166;    /* Mustard Yellow */
@@ -482,4 +482,19 @@ html {
   .site-nav .nav-toggle[aria-expanded="true"] .hamburger::after {
     transform: translateY(-8px) rotate(-45deg);
   }
+}
+
+/* ─── Services page fixes ─────────────────────────────────── */
+
+/* 1) Make the default .container inside .services stack its children */
+.services > .container {
+  display: block;
+}
+
+/* 2) New grid wrapper for your cards */
+.services-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin: 2rem 0;   /* space above & below the cards */
 }
