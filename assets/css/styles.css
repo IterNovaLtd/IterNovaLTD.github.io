@@ -483,3 +483,66 @@ html {
     transform: translateY(-8px) rotate(-45deg);
   }
 }
+
+/* ─── Services Details Sections ───────────────────────────────── */
+
+.service-section {
+  padding: 4rem 0;
+}
+
+.service-section .container {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+/* flip content for alternating sections */
+.service-section.reverse .service-content {
+  order: 2;
+}
+.service-section.reverse .service-image {
+  order: 1;
+}
+
+.service-content {
+  flex: 1 1 400px;
+}
+.service-content h2 {
+  margin-top: 0;
+  font-size: 1.75rem;
+  color: var(--coral);
+}
+.service-content p {
+  margin: 1rem 0 1.5rem;
+  color: var(--text);
+}
+.btn.btn-small {
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+}
+
+/* image styling */
+.service-image {
+  flex: 1 1 300px;
+  text-align: center;
+}
+.service-image img {
+  width: 100%;
+  max-width: 320px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+/* Responsive: stack on mobile */
+@media (max-width: 768px) {
+  .service-section .container {
+    flex-direction: column;
+  }
+  .service-section.reverse .service-content,
+  .service-section.reverse .service-image {
+    order: initial;
+  }
+  .service-image img {
+    max-width: 100%;
+  }
+}
