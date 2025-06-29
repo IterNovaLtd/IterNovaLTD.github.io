@@ -691,7 +691,7 @@ html {
 
   /* 3) Gap between paragraph & button */
   .service-section .service-content .btn-small {
-    margin: 0 0 0.75rem !important;    /* 0.75rem under the button */
+    margin: 0 0 1rem !important;    /* 0.75rem under the button */
   }
 
   /* 4) Optional: ensure image sits flush under the button gap you set */
