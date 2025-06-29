@@ -699,4 +699,41 @@ html {
     margin: 0 !important;
   }
 }
+/* ─── MOBILE FINAL FALLBACK: FOOTER + ABOUT SECTION ───────────────── */
+@media (max-width: 768px) {
+  /* 1) ABOUT SECTION ON HOME (kill flex-gap, stack via block + margin) */
+  .about > .container {
+    display: block !important;
+    padding: 0 1rem !important;        /* side padding so content breathes */
+  }
+  /* tiny margin between the two inner panels */
+  .about > .container > * + * {
+    margin-top: 0.75rem !important;
+  }
+  /* ensure any headings/paras inside also aren’t over-margined */
+  .about .about-text h2,
+  .about .about-text p {
+    margin: 0 0 0.5rem !important;
+  }
+  .about .about-image {
+    margin: 0 !important;
+  }
 
+  /* 2) FOOTER WIDGETS (stack columns + kill gap, reintroduce small margins) */
+  .footer-widgets {
+    display: block !important;
+    padding: 0 1rem !important;        /* same side padding as above */
+  }
+  .footer-widgets .footer-col {
+    margin: 0 0 1rem !important;       /* 1rem between each stacked column */
+  }
+
+  /* 3) FOOTER-BOTTOM BAR (stack items, margin for breathing) */
+  .footer-bottom {
+    display: block !important;
+    padding: 0 1rem !important;
+  }
+  .footer-bottom > * + * {
+    margin-top: 0.5rem !important;     /* 0.5rem between back-to-top, copyright, etc */
+  }
+}
