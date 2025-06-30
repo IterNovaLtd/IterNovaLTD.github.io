@@ -146,7 +146,7 @@ a:hover {
 
 
     /* ─── Services ─────────────────────────────────────────────── */
-    .services { padding: 4rem 0; background: var(--bg); }
+    .services { padding: 6rem 0; background: var(--bg); }
     .services .container {
       display: flex; flex-wrap: wrap; gap: 2rem;
     }
@@ -169,7 +169,7 @@ a:hover {
 
     /* ─── About ───────────────────────────────────────────────── */
     .about {
-      padding: 4rem 0;
+      padding: 6rem 0;
       background: var(--primary);
       color: var(--text);
     }
@@ -180,7 +180,7 @@ a:hover {
 
     /* ─── Call to Action ──────────────────────────────────────── */
     .cta {
-      padding: 4rem 0; background: var(--bg); text-align: center;
+      padding: 6rem 0; background: var(--bg); text-align: center;
     }
 
 /* ─── Footer ────────────────────────────────────────────────── */
@@ -189,55 +189,71 @@ a:hover {
 .site-footer {
   background: var(--secondary);   /* darker mid-grey */
   color: var(--bg);               /* ivory text */
-  padding: 2rem 0 1rem;
+  padding: 3rem 0 2rem;
 }
 
-/* Three-column widgets */
+/* ─── Footer Widgets (three-column block) ───────────────────── */
 .footer-widgets {
-  display: flex; flex-wrap: wrap; gap: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem;               /* increase space between columns */
   text-align: left;
-  margin-bottom: 1.5rem;
-  padding: 0 1rem;
+  margin-bottom: 2rem;     /* more breathing room above bottom bar */
+  padding: 0 1.5rem;       /* wider side-padding */
 }
+
 .footer-col {
   flex: 1 1 200px;
 }
+
 .footer-col h4 {
-  margin-bottom: .75rem;
-  font-size: 1.1rem;
+  margin-bottom: 1rem;     /* a bit more space under each heading */
+  font-size: 1.25rem;      /* slightly larger sub-headings */
   color: var(--bg);
-}
-.footer-links {
-  list-style: none;
-  padding: 0; margin: 0;
-}
-.footer-links li {
-  margin-bottom: .5rem;
-  font-size: .95rem;
-  color: var(--bg);
-}
-.footer-links a {
-  color: var(--bg);
-  transition: color 150ms;
-}
-.footer-links a:hover {
-  color: var(--mustard);
 }
 
-/* Bottom bar */
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin-bottom: 0.75rem;  /* larger gap between items */
+  font-size: 1rem;         /* bump body text up a notch */
+  color: var(--bg);
+}
+
+.footer-links a {
+  color: var(--bg);
+  transition: color 150ms, transform 150ms;
+}
+
+.footer-links a:hover {
+  color: var(--mustard);
+  transform: translateX(4px);  /* subtle slide on hover */
+}
+
+/* ─── Footer Bottom Bar ───────────────────────────────────── */
 .footer-bottom {
   border-top: 1px solid var(--primary);
-  display: flex; justify-content: space-between; align-items: center;
-  padding: 1rem;
-  font-size: .9rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;              /* space between back-to-top & copyright */
+  padding: 2rem 1.5rem;   /* more padding top/bottom and sides */
+  font-size: 1rem;        /* larger, easier-to-read text */
 }
+
 .back-to-top {
   text-decoration: none;
   color: var(--bg);
-  transition: color 150ms;
+  transition: color 150ms, transform 150ms;
 }
+
 .back-to-top:hover {
   color: var(--mustard);
+  transform: translateY(-2px);  /* tiny lift on hover */
 }
 
 /* Responsive */
