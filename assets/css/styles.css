@@ -360,47 +360,53 @@ html {
   height: 40px;   /* tweak as needed */
 }
 
-/* ─── Inner‐page header ───────────────────────────────────────── */
+/* ─── Inner-page header ───────────────────────────────────── */
 .page-header {
-  background: var(--secondary);  /* dark mid‐grey band */
-  color: var(--bg);              /* ivory text */
-  padding: 1rem 0;               /* vertical breathing room */
-  margin-bottom: 2rem;           /* separate from main content */
-  border-bottom: 2px solid var(--coral)
+  background: var(--secondary);    /* Dark mid-grey band */
+  color: var(--bg);                /* Ivory text */
+  padding: 2rem 1rem;              /* ↑ vertical breathing + 1rem sides */
+  margin-bottom: 3rem;             /* ↑ more space before main content */
+  border-bottom: 3px solid var(--coral);
 }
+
 .page-header .container {
   display: flex;
   flex-direction: column;
-  gap: .25rem;                   /* tighten up the gap */
+  gap: 0.5rem;                     /* a bit more gap between title + crumbs */
 }
+
 .page-header h1 {
   margin: 0;
-  font-size: 1.75rem;            /* a touch smaller */
-  font-weight: 600;
-  color: var(--coral);
+  font-size: 2rem;                 /* larger, more “headline” scale */
+  line-height: 1.2;                /* tight but readable */
+  font-weight: 700;                /* extra emphasis */
+  color: var(--coral);             /* coral accent */
 }
+
 .breadcrumb {
   list-style: none;
   display: flex;
-  gap: .25rem;
+  gap: 0.5rem;                     /* loosen links a little */
   margin: 0;
   padding: 0;
-  font-size: .875rem;            /* smaller crumb text */
+  font-size: 0.9rem;               /* slightly bigger crumb text */
 }
+
 .breadcrumb li + li::before {
   content: "/";
-  margin: 0 .25rem;
+  margin: 0 0.25rem;
   color: var(--text);
 }
+
 .breadcrumb a {
   color: var(--bg);
   text-decoration: none;
   transition: color 150ms;
 }
+
 .breadcrumb a:hover {
   color: var(--mustard);
 }
-
 /* ─── Contact Form ───────────────────────────────────────── */
 .contact-form {
   max-width: 600px;
