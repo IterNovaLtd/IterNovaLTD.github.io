@@ -237,6 +237,7 @@ a:hover {
   background: var(--secondary);   /* darker mid-grey */
   color: var(--bg);               /* ivory text */
   padding: 3rem 0 2rem;
+ border-top: 4px solid var(--mustard);
 }
 
 /* ─── Footer Widgets (three-column block) ───────────────────── */
