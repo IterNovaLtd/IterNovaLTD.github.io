@@ -48,15 +48,17 @@
     </nav>
   </div>
 </header>
-  <!-- Hero -->
-  <header class="site-hero">
-    <div class="container">
-      <img src="assets/images/logo-coral.png" alt="iterNova logo" width="180"/>
-      <h1>Welcome to iterNova</h1>
-      <p>Your innovation consultancy.</p>
-      <a href="contact.html" class="btn">Get In Touch</a>
-    </div>
-  </header>
+<!-- Hero (no background image, typewriter version) -->
+<header class="site-hero no-image">
+  <div class="hero-content container">
+    <h1>Turning Smart Ideas Into Real Impact</h1>
+    <p class="hero-sub">
+      <span class="static">We deliver&nbsp;</span>
+      <span id="typewriter"></span>
+    </p>
+    <a href="contact.html" class="btn hero-btn">Let’s Talk</a>
+  </div>
+</header>
 
   <!-- Services -->
   <section class="services">
@@ -159,6 +161,30 @@
       toggle.setAttribute('aria-expanded', isOpen);
     });
   });
+</script>
+  <script>
+  // phrases that DON’T repeat “Consultancy”, “Project Management”, “AI Bots”
+  const phrases = [
+    "clarity in complexity.",
+    "faster time-to-value.",
+    "seamless customer journeys."
+  ];
+  const el = document.getElementById("typewriter");
+  let idx = 0, char = 0, direction = 1;
+
+  function tick() {
+    const full = phrases[idx];
+    char += direction;
+    el.textContent = full.slice(0, char);
+    if (char === full.length || char === 0) {
+      direction = char === 0 ? 1 : -1;
+      if (direction === 1) idx = (idx + 1) % phrases.length;
+      setTimeout(tick, 800);
+    } else {
+      setTimeout(tick, 100);
+    }
+  }
+  document.addEventListener("DOMContentLoaded", () => tick());
 </script>
 </body>
 </html>
