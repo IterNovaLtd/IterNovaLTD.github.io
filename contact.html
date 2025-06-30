@@ -164,6 +164,42 @@
   </div>
 
 </footer>
+    <script>
+(function(){
+  const banner = document.getElementById('cookie-banner');
+  const accept = document.getElementById('accept-cookies');
+  const decline = document.getElementById('decline-cookies');
+  const key = 'analytics_consent';
+  const consent = localStorage.getItem(key);
+
+  // On load: if already decided, hide banner & maybe load GA
+  if (consent === 'granted') { loadAnalytics(); banner.classList.add('hidden'); }
+  if (consent === 'denied')  { banner.classList.add('hidden'); }
+
+  accept.addEventListener('click', () => {
+    localStorage.setItem(key, 'granted');
+    loadAnalytics();
+    banner.classList.add('hidden');
+  });
+  decline.addEventListener('click', () => {
+    localStorage.setItem(key, 'denied');
+    banner.classList.add('hidden');
+  });
+
+  function loadAnalytics(){
+    // Replace G-XXXXXXXXXX with your Measurement ID
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-LQ4FGYKXEL');
+    const s = document.createElement('script');
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=G-LQ4FGYKXEL';
+    s.async = true;
+    document.head.appendChild(s);
+  }
+})();
+</script>
+
   <script>
   const form = document.getElementById('contact-form');
   const status = document.querySelector('.form-status');
