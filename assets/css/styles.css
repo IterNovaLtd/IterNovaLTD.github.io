@@ -145,38 +145,83 @@ a:hover {
 }
 
 
-    /* ─── Services ─────────────────────────────────────────────── */
-    .services { padding: 6rem 0; background: var(--bg); }
-    .services .container {
-      display: flex; flex-wrap: wrap; gap: 2rem;
-    }
-    .service-item {
-      flex: 1 1 250px;
-      background: #fff;
-      padding: 1.5rem;
-      text-align: center;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      border-radius: 8px;
-    }
-    .service-item img {
+/* ─── Services ─────────────────────────────────────────────── */
+.services {
+  /* keep your 6rem vertical padding */
+  padding: 6rem 0;
+  background: var(--bg);
+}
+
+.services .container {
+  display: flex;
+  flex-wrap: wrap;
+  /* wider gutter for a more premium feel */
+  gap: 3rem;
+  /* ensure cards line up at the top */
+  align-items: flex-start;
+}
+
+.service-item {
+  flex: 1 1 250px;
+  background: #fff;
+  /* extra breathing room inside each card */
+  padding: 2rem;
+  text-align: center;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  /* smooth lift on hover */
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.service-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+}
+
+.service-item img {
   width: 80px;
   height: 80px;
   object-fit: contain;
   display: block;
-  margin: 0 auto 1rem;  
+  /* bigger gap below the icon */
+  margin: 0 auto 1.5rem;
 }
 
+/* ─── About ───────────────────────────────────────────────── */
+.about {
+  padding: 6rem 0;
+  background: var(--primary);
+  color: var(--text);
+}
 
-    /* ─── About ───────────────────────────────────────────────── */
-    .about {
-      padding: 6rem 0;
-      background: var(--primary);
-      color: var(--text);
-    }
-    .about .container { display: flex; flex-wrap: wrap; gap: 2rem; }
-    .about .about-text { flex: 1 1 400px; }
-    .about .about-image { flex: 1 1 300px; }
-    .about .about-image img { width: 100%; border-radius: 8px; }
+.about .container {
+  display: flex;
+  flex-wrap: wrap;
+  /* mirror the services gap */
+  gap: 3rem;
+  /* vertically center image + text */
+  align-items: center;
+}
+
+/* give text more real estate & control line-length */
+.about .about-text {
+  flex: 2 1 400px;
+}
+.about .about-text p {
+  /* cap the width for better readability */
+  max-width: 38em;
+  margin-bottom: 1rem;
+}
+
+.about .about-image {
+  flex: 1 1 300px;
+}
+.about .about-image img {
+  width: 100%;
+  /* consistent rounding + a touch of depth */
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
 
     /* ─── Call to Action ──────────────────────────────────────── */
     .cta {
