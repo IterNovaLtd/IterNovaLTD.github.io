@@ -13,11 +13,39 @@
       background: var(--bg);
       color: var(--text);
       font-family: 'Open Sans', sans-serif;
-      line-height: 1.6;
+      line-height: 1.75;
+      font-size: 1.125rem;
     }
-    h1, h2, h3 { font-family: 'Montserrat', sans-serif; margin: .5em 0; }
-    a { color: var(--coral); text-decoration: none; }
-    a:hover { text-decoration: underline; }
+h1 {
+  font-family: 'Montserrat', sans-serif;
+  margin: 0.5em 0;
+  /* new size: */
+  font-size: 3.5rem;
+}
+
+h2 {
+  font-family: 'Montserrat', sans-serif;
+  margin: 0.5em 0;
+  /* new size: */
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-family: 'Montserrat', sans-serif;
+  margin: 0.5em 0;
+  /* new size: */
+  font-size: 2rem;
+}
+
+/* ─── Global Links ───────────────────────────────────────── */
+a {
+  color: var(--coral);
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
 
     /* ─── Utility layout ───────────────────────────────────────── */
     .container {
