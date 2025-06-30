@@ -737,3 +737,36 @@ html {
     margin-top: 0.5rem !important;     /* 0.5rem between back-to-top, copyright, etc */
   }
 }
+/* ─── Hero: Gradient + Typewriter ─────────────────────────── */
+.site-hero.no-image {
+  background: linear-gradient(
+      0deg,
+      rgba(52,58,64,0.85),
+      rgba(52,58,64,0.85)
+    ),
+    /* fallback to solid coral-mustard blend */
+    linear-gradient(135deg, var(--coral), var(--mustard));
+  color: var(--bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 65vh;
+  text-align: center;
+  position: relative;
+}
+.site-hero.no-image .hero-content h1 {
+  font-size: 3rem;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+.hero-sub {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+}
+.hero-sub .static {
+  opacity: 0.8;
+}
+.hero-btn {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+}
