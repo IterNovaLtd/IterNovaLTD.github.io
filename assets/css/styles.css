@@ -187,6 +187,7 @@ a:hover {
 }
 
 /* ─── About ───────────────────────────────────────────────── */
+/* ─── About ───────────────────────────────────────────────── */
 .about {
   padding: 6rem 0;
   background: var(--primary);
@@ -196,33 +197,34 @@ a:hover {
 .about .container {
   display: flex;
   flex-wrap: wrap;
-  /* mirror the services gap */
-  gap: 3rem;
-  /* vertically center image + text */
-  align-items: center;
+  gap: 3rem;            /* gutter between text & image */
+  align-items: center;  /* vertical center both children */
 }
 
-/* give text more real estate & control line-length */
+/* Remove any hidden top-margin on the first text element */
+.about .about-text > *:first-child {
+  margin-top: 0 !important;
+}
+
 .about .about-text {
   flex: 2 1 400px;
 }
+
 .about .about-text p {
-  /* cap the width for better readability */
   max-width: 38em;
   margin-bottom: 1rem;
 }
 
 .about .about-image {
   flex: 1 1 300px;
+  align-self: center;   /* ensure the image is centered in the flex line */
 }
+
 .about .about-image img {
   width: 100%;
-  /* consistent rounding + a touch of depth */
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.08);
 }
-
-
     /* ─── Call to Action ──────────────────────────────────────── */
     .cta {
       padding: 6rem 0; background: var(--bg); text-align: center;
