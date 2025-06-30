@@ -770,3 +770,18 @@ html {
   padding: 0.75rem 1.5rem;
   font-size: 1rem;
 }
+ .cookie-banner {
+  position: fixed; bottom: 0; left: 0; right: 0;
+  background: rgba(52,58,64,0.95); color: #F4F4F4;
+  padding: 1rem; display: flex;
+  justify-content: space-between; align-items: center;
+  z-index: 10000;
+}
+.cookie-banner p { margin: 0; font-size: .9rem; }
+.cookie-banner button {
+  background: var(--coral); color: var(--bg);
+  border: none; padding: .5rem 1rem; cursor: pointer;
+  font-weight: 600;
+}
+.cookie-banner button:hover { background: var(--mustard); }
+.cookie-banner.hidden { display: none !important; }
